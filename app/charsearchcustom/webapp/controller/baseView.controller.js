@@ -323,14 +323,18 @@ sap.ui.define(
       // },
 
       _handleActionPress: function (evt) {
-        let flocId = evt.getSource().getBindingContext().getProperty('FlocId');
-        let currentEnv = window.location.host.substring(0, 8);
+        var Tplnr = evt.getSource().getBindingContext().getProperty('Tplnr');
+        // let flocId = evt.getSource().getBindingContext().getProperty('FlocId');
+        // let currentEnv = window.location.host.substring(0, 8);
 
-        currentEnv = currentEnv.includes('anas') ? currentEnv : 'anas-dev';
+        // currentEnv = currentEnv.includes('anas') ? currentEnv : 'anas-dev';
 
-        let flocDetailUrlData = this.getView().getModel('flocDetailUrlModel').getData().find(obj => obj.env === currentEnv);
-        let finalUrl = flocDetailUrlData.url + "&/" + flocId;
-        window.open(finalUrl, '_blank');
+        // let flocDetailUrlData = this.getView().getModel('flocDetailUrlModel').getData().find(obj => obj.env === currentEnv);
+        // let finalUrl = flocDetailUrlData.url + "&/" + flocId;
+        var url_dev = `https://anas-dev.launchpad.cfapps.eu10.hana.ondemand.com/site?siteId=9173651a-3282-4d9b-af5f-11dbf9394b7b&sap-language=it#anasmsedetec-display?sap-ui-app-id-hint=78320b4b-b33a-4804-a20b-c22b409ea982&/detail/${Tplnr};noedit`;
+        var url_qas = `https://anas-qas.launchpad.cfapps.eu10.hana.ondemand.com/site?siteId=5cc79d99-1a01-4dc0-b04a-592e0ca754f4#anasmsedetec-display?sap-ui-app-id-hint=4b4e9b3c-13a4-4360-9a53-95b5ef80e211&/detail/${Tplnr};noedit`;
+        var url_prd = `https://anas-prd.launchpad.cfapps.eu10.hana.ondemand.com/site?siteId=5cc79d99-1a01-4dc0-b04a-592e0ca754f4#anasmsedetec-display?sap-ui-app-id-hint=saas_approuter_anas&/detail/${Tplnr};noedit`;
+        window.open(url_dev, '_blank');
       },
 
       onOpenAddFilterBasePress: function () {
