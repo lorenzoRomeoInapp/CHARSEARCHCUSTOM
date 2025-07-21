@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <SelectDialog id="idFiltersNotLinearSelectDialog" items="{path:'/Caratteristiche_no_linSet', suspended: true}" noDataText="{i18n>FiltersListNotLinearDialogNoDataText}" title="{i18n>dialogTitleNotLinear}" growingThreshold="20" search=".onSearchCharacteristicNotLinear" confirm=".onFiltersNotLinearDialogClose" cancel=".onFiltersNotLinearDialogClose" multiSelect="true" draggable="true" resizable="true">
+        <CustomListItem type="Active">
+            <VBox class="sapUiSmallMargin">
+                <Label text="{atnam}" design="Bold" class="sapUiTinyMarginBottom"/>
+                <Label text="{atbez}"/>
+            </VBox>
+        </CustomListItem>
+    </SelectDialog>
+</core:FragmentDefinition>

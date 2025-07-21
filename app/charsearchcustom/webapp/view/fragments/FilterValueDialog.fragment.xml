@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="idFilterValueDialog" title="{filterValueDialogModel>/atbez}" contentWidth="40em">
+        <HBox justifyContent="SpaceAround">
+            <HBox width="50%" class="fullWidthContent sapUiSmallMargin">
+                <Select id="idFilterTypeSelect" width="100%" selectedKey="{filterValueDialogModel>/filterType}" >
+                    <core:Item key="eq" text="{i18n>eqItem}" />
+                    <core:Item key="noteq" text="{i18n>notEqItem}" />
+                    <core:Item key="like" text="{i18n>likeItem}" />
+                </Select>
+            </HBox>
+            <HBox width="50%" class="fullWidthContent sapUiSmallMargin">
+                <Input id="idFilterValueInput" value="{filterValueDialogModel>/filterValue}" showValueHelp="{filterValueDialogModel>/showValueHelp}" valueHelpRequest=".openFilterFieldValueHelp" placeholder="{i18n>inputPlaceholder}" width="100%"/>
+            </HBox>
+        </HBox>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button text="{i18n>okButton}" press=".onConfirmFilterValueDialog"/>
+                <Button text="{i18n>cancelButton}" press=".onCloseFilterValueDialog"/>
+            </Toolbar>
+        </footer>
+    </Dialog>
+</core:FragmentDefinition>

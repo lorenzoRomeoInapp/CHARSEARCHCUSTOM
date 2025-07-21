@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <SelectDialog id="idFiltersBaseSelectDialog" items="{baseFiltersList>/}" noDataText="{i18n>FiltersListBaseDialogNoDataText}" title="{i18n>dialogTitleBase}" growingThreshold="20" search=".onSearchCharacteristicBase" confirm=".onFiltersBaseDialogClose" cancel=".onFiltersBaseDialogClose" multiSelect="true" draggable="true" resizable="true">
+        <CustomListItem type="Active">
+            <VBox class="sapUiSmallMargin">
+                <Label text="{baseFiltersList>description}" design="Bold"/>
+            </VBox>
+        </CustomListItem>
+    </SelectDialog>
+</core:FragmentDefinition>

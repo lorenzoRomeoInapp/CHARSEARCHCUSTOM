@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZIAMGW_FIORI_TOOL_SRV" xml:lang="it" sap:schema-version="1">
+			<EntityType Name="Caratteristiche_no_lin" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="atnam"/>
+				</Key>
+				<Property Name="atinn" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt. interna" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="atnam" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="atbez" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Definizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="attributi" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="atnam"/>
+				</Key>
+				<Property Name="atnam" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="atwtb" Type="Edm.String" Nullable="false" MaxLength="5000" sap:unicode="false" sap:label="el dati valore car." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Sede tecnica" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_characteristics_values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="atinn"/>
+					<PropertyRef Name="code"/>
+				</Key>
+				<Property Name="atinn" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt. interna" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="code" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Valore car." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="description" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Definizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="funct_locations" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Tplnr"/>
+				</Key>
+				<Property Name="FlocId" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ID interno sede tecnica" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Tplkz" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Codica struttura" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Tplma" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Sede tecnica superiore" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Sede tecnica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="DecValueFrom" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="14" sap:unicode="false" sap:label="Limite inf. numerico" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Iwerk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Div. pianificazione della manutenzione" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Fltyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Categoria sede tecnica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Data creazione" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Creato da" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Aedat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Data modifica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Aenam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Autore modifica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Eqart" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Tipo di oggetto tecnico" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Zziflot" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Codice strada" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="ZziflotDescr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Descrizione codice strada" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="ZznProtocOds" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Num. protocollo ordine di servizio" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Pltxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Descrizione sede tecnica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Pltxu" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Descrizione sede tecnica (maiuscola)" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="StartPoint" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Punto iniziale strada" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="EndPoint" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Punto Finale strada" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="LinearLength" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Lunghezza strada" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="LinearUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unità di misura" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+				<Property Name="Atbez" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Definizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Atinn" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt. interna" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Atnam" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Atwrt" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Valore car." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StartPointChar" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Inizio caratteristica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="EndPointChar" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Fine caratteristica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="LinearLengthChar" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Lunghezza caratteristica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="LinearLengthCalc" Type="Edm.Double" Nullable="false" sap:unicode="false" sap:label="Lunghezza calc. caratteristica" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="LinearUnitChar" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unità di misura caratteristica" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+			</EntityType>
+			<EntityType Name="caratteristiche" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="atnam"/>
+				</Key>
+				<Property Name="atinn" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt. interna" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="atnam" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="atbez" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Definizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_tplkz" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="code"/>
+				</Key>
+				<Property Name="code" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Cod. struttura" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tsto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_fltyp" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="code"/>
+				</Key>
+				<Property Name="code" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Cat. sede tecn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="description" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Descrizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_trpnr" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="trpnr"/>
+				</Key>
+				<Property Name="trpnr" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Sede di rif." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="pltxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Descrizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_iwerk" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="code"/>
+				</Key>
+				<Property Name="code" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Divisione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="description" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Nome 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_eqart" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="code"/>
+				</Key>
+				<Property Name="description" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Testo tp ogg." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="code" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Tipo di oggetto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_ingrp" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="iwerk"/>
+					<PropertyRef Name="ingrp"/>
+				</Key>
+				<Property Name="iwerk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Divisione pian." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ingrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="GrRespPianManut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="innam" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Nome GrRespPM" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_swerk" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="werks"/>
+				</Key>
+				<Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Divisione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Nome 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="search_linear_unit" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="code"/>
+				</Key>
+				<Property Name="code" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unità mis. int." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+				<Property Name="description" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unità mis. int." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+			</EntityType>
+			<EntityType Name="search_atinn" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="atwrt"/>
+				</Key>
+				<Property Name="atinn" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Caratt. interna" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="atwrt" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Valore car." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityContainer Name="ZIAMGW_FIORI_TOOL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="Caratteristiche_no_linSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.Caratteristiche_no_lin" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="attributiSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.attributi" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_characteristics_valuesSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_characteristics_values" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="funct_locationsSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.funct_locations" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="caratteristicheSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.caratteristiche" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_tplkzSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_tplkz" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_fltypSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_fltyp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_trpnrSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_trpnr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_iwerkSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_iwerk" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_eqartSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_eqart" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_ingrpSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_ingrp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_swerkSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_swerk" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_linear_unitSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_linear_unit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="search_atinnSet" EntityType="ZIAMGW_FIORI_TOOL_SRV.search_atinn" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://saps4aas.anasnet.it:8000/sap/opu/odata/sap/ZIAMGW_FIORI_TOOL_SRV/$metadata"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://saps4aas.anasnet.it:8000/sap/opu/odata/sap/ZIAMGW_FIORI_TOOL_SRV/$metadata"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

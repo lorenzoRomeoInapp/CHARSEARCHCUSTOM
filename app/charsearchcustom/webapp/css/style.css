@@ -1,0 +1,23 @@
+/* Enter your custom styles here */
+
+.paddingTopRightBottom {
+    padding: 1em 1em 0 0;
+}
+
+.paddingTopLeft {
+    padding: 1em 0 0 1em;
+}
+
+.bigLabelHeader{
+    font-size: 1.25em;
+}
+
+.fullWidthContent .sapMFlexItem {
+    width: 100%;
+}
+
+.header{
+    height: 2.75rem !important;
+    border-top-right-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
+}

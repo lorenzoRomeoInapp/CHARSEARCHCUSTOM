@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="catalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="funct_locationsSet" EntityType="catalogService.funct_locationsSet"/>
+                <EntitySet Name="caratteristicheSet" EntityType="catalogService.caratteristicheSet"/>
+            </EntityContainer>
+            <EntityType Name="funct_locationsSet">
+                <Key>
+                    <PropertyRef Name="Tplnr"/>
+                </Key>
+                <Property Name="Tplnr" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="Tplkz" Type="Edm.String" MaxLength="5" Nullable="false"/>
+                <Property Name="Fltyp" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="Erdat" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="Ernam" Type="Edm.String" MaxLength="12" Nullable="false"/>
+                <Property Name="Aedat" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="Aenam" Type="Edm.String" MaxLength="12" Nullable="false"/>
+                <Property Name="Eqart" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="Zziflot" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="ZziflotDescr" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="ZzstradeInt" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="ZzstradeExt" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="ZzsoaweExt" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="ZzNs" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="ZzNsInt" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="ZzsoaweOld" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="ZznProtocOds" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="Zzkm" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="Zzkmda" Type="Edm.Decimal" Scale="3" Precision="9" Nullable="false"/>
+                <Property Name="Zzkma" Type="Edm.Decimal" Scale="3" Precision="9" Nullable="false"/>
+                <Property Name="Zzestesa" Type="Edm.Decimal" Scale="3" Precision="9" Nullable="false"/>
+                <Property Name="Pltxt" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="Pltxu" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="StartPoint" Type="Edm.Double" Nullable="false"/>
+                <Property Name="EndPoint" Type="Edm.Double" Nullable="false"/>
+                <Property Name="LinearLength" Type="Edm.Double" Nullable="false"/>
+                <Property Name="LinearUnit" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="ZzlatitudeStart" Type="Edm.Decimal" Scale="12" Precision="15" Nullable="false"/>
+                <Property Name="ZzlatitudeEnd" Type="Edm.Decimal" Scale="12" Precision="15" Nullable="false"/>
+                <Property Name="ZzlongitudeStart" Type="Edm.Decimal" Scale="12" Precision="15" Nullable="false"/>
+                <Property Name="ZzlongitudeEnd" Type="Edm.Decimal" Scale="12" Precision="15" Nullable="false"/>
+                <Property Name="Atbez" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="Atinn" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="Atwrt" Type="Edm.String" MaxLength="70" Nullable="false"/>
+                <Property Name="StartPointChar" Type="Edm.Double" Nullable="false"/>
+                <Property Name="EndPointChar" Type="Edm.Double" Nullable="false"/>
+                <Property Name="LinearLengthChar" Type="Edm.Double" Nullable="false"/>
+                <Property Name="LinearLengthCalc" Type="Edm.Double" Nullable="false"/>
+                <Property Name="LinearUnitChar" Type="Edm.String" MaxLength="3" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="caratteristicheSet">
+                <Key>
+                    <PropertyRef Name="atinn"/>
+                </Key>
+                <Property Name="atinn" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="atbez" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

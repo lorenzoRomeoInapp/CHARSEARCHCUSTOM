@@ -1,0 +1,110 @@
+<mvc:View controllerName="charsearchcustom.controller.baseView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:uitable="sap.ui.table"
+    xmlns:sap.ui.fl="sap.ui.fl"
+    xmlns:p13n="sap.m.p13n">
+    <Page id="idCharacteristicsPage" showHeader="false" enableScrolling="false">
+        <l:Splitter id="idSplitterBaseView" height="100%">
+            <VBox id="idFiltersVBox" height="100%">
+                <List id="idFiltersPanelsList" class="paddingTopLeft">
+                    <headerToolbar>
+                        <Toolbar id="idFiltersListHeaderToolbar">
+                            <Label id="idFiltersListTitle" class="bigLabelHeader" text="{i18n>filtersList}"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <CustomListItem id="idBaseFiltersItem">
+                        <Panel id="idBaseFiltersPanel" expandable="true" expanded="false" height="33%">
+                            <headerToolbar>
+                                <OverflowToolbar style="Clear">
+                                    <Title text="{i18n>baseFilters}" />
+                                    <ToolbarSpacer />
+                                    <Button id="idFiltersBaseListAddButton" press=".onOpenAddFilterBasePress" icon="sap-icon://add-filter" type="Default"/>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <List id="idFiltersListBase" items="{filtersListBase>/}" mode="Delete" delete=".onFilterBasicDelete" noDataText="{i18n>filtersNoDataText}" backgroundDesign="Solid" class="paddingTopLeft">
+                                <CustomListItem>
+                                    <VBox class="sapUiSmallMargin">
+                                        <Label text="{filtersListBase>description}" class="sapUiTinyMarginBottom"/>
+                                        <MultiInput showValueHelp="true" valueHelpRequest=".openFilterValueHelp" tokenUpdate=".onFilterValueTokenUpdate" change=".onFilterValueChange"/>
+                                    </VBox>
+                                </CustomListItem>
+                            </List>
+                        </Panel>
+                    </CustomListItem>
+                    <CustomListItem id="idNotLinearCharFiltersItem">
+                        <Panel id="idNotLinearCharFiltersPanel" expandable="true" expanded="false" height="33%">
+                            <headerToolbar>
+                                <OverflowToolbar style="Clear">
+                                    <Title text="{i18n>notLinearFilters}" />
+                                    <ToolbarSpacer />
+                                    <Button id="idFiltersNotLinearListAddButton" press=".onOpenAddFilterNotLinearPress" icon="sap-icon://add-filter" type="Default"/>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <List id="idFiltersListNotLinear" items="{filtersListNotLinear>/}" mode="Delete" delete=".onFilterNotLinearDelete" noDataText="{i18n>filtersNoDataText}" backgroundDesign="Solid" class="paddingTopLeft">
+                                <CustomListItem>
+                                    <VBox class="sapUiSmallMargin">
+                                        <Label text="{filtersListNotLinear>atbez}" class="sapUiTinyMarginBottom"/>
+                                        <MultiInput showValueHelp="true" valueHelpRequest=".openFilterValueHelp" tokenUpdate=".onFilterValueTokenUpdate" change=".onFilterValueChange"/>
+                                    </VBox>
+                                </CustomListItem>
+                            </List>
+                        </Panel>
+                    </CustomListItem>
+                    <CustomListItem id="idLinearCharFiltersItem">
+                        <Panel id="idLinearCharFiltersPanel" expandable="true" expanded="false" height="33%">
+                            <headerToolbar>
+                                <OverflowToolbar style="Clear">
+                                    <Title text="{i18n>linearFilters}" />
+                                    <ToolbarSpacer />
+                                    <Button id="idFiltersListAddButton" press=".onOpenAddFilterPress" icon="sap-icon://add-filter" type="Default"/>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <List id="idFiltersListLinear" items="{filtersListLinear>/}" mode="Delete" delete=".onFilterDelete" noDataText="{i18n>filtersNoDataText}" backgroundDesign="Solid" class="paddingTopLeft">
+                                <CustomListItem>
+                                    <VBox class="sapUiSmallMargin">
+                                        <Label text="{filtersListLinear>atbez}" class="sapUiTinyMarginBottom"/>
+                                        <MultiInput showValueHelp="true" valueHelpRequest=".openFilterValueHelp" tokenUpdate=".onFilterValueTokenUpdate" change=".onFilterValueChange"/>
+                                    </VBox>
+                                </CustomListItem>
+                            </List>
+                        </Panel>
+                    </CustomListItem>
+                </List>
+                <layoutData>
+                    <l:SplitterLayoutData id="idSplitterLayoutFilters" size="25%" resizable="false" />
+                </layoutData>
+            </VBox>
+            <VBox id="idSmartTableVBox" height="100%">
+
+                <p13n:Popup id="p13nPopup" title="{i18n>p13nTitle}" close=".onP13NPopupClose" warningText="{i18n>p13nWarningText}">
+                    <p13n:panels>
+                        <p13n:SelectionPanel id="columnsPanel" title="{i18n>p13nColumnsPanelTitle}" enableCount="true" showHeader="true" change=".parseP13nState"/>
+                    </p13n:panels>
+                </p13n:Popup>
+
+                <uitable:Table id="idUiTable" rows="{path: '/funct_locationsSet'}" rowsUpdated=".onRowsUpdated" visibleRowCountMode="Auto" threshold="15" enableBusyIndicator="true" selectionMode="None" class="paddingTopRightBottom" fixedColumnCount="1">
+                    <uitable:extension>
+                        <OverflowToolbar class="header">
+                            <Title id="title" text="{i18n>smartTableHeader}" class="bigLabelHeader"/>
+                            <ToolbarSpacer/>
+                            <Button icon="sap-icon://action-settings" press=".onOpenP13NPopup"/>
+                            <Button icon="sap-icon://excel-attachment" press=".onExport"/>
+                        </OverflowToolbar>
+                    </uitable:extension>
+                    <uitable:layoutData>
+                        <FlexItemData growFactor="1" baseSize="100%"/>
+                    </uitable:layoutData>
+                </uitable:Table>
+            </VBox>
+        </l:Splitter>
+        <footer>
+            <Toolbar id="idFiltersFooterToolbar">
+                <ToolbarSpacer id="idFiltersFooterToolbarSpacer"/>
+                <Button id="idFiltersFooterGoButton" text="{i18n>goButton}" press=".onFilterGoPress" type="Emphasized"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

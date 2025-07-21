@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <SelectDialog id="idFiltersSelectDialog" items="{path:'/caratteristicheSet', suspended: true}" noDataText="{i18n>FiltersListDialogNoDataText}" title="{i18n>dialogTitleLinear}" growingThreshold="20" search=".onSearchCharacteristic" confirm=".onFiltersDialogClose" cancel=".onFiltersDialogClose" multiSelect="true" draggable="true" resizable="true">
+        <CustomListItem type="Active">
+            <VBox class="sapUiSmallMargin">
+                <Label text="{atnam}" design="Bold" class="sapUiTinyMarginBottom"/>
+                <Label text="{atbez}"/>
+            </VBox>
+        </CustomListItem>
+    </SelectDialog>
+</core:FragmentDefinition>
